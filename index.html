@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+
+
+
+
+
+
+  <link rel="stylesheet" type="text/css" href="bootstrap/css/bootstrap.min.css">
+  <link rel="stylesheet" type="text/css" href="css/index_main.less.css" class="main-less">
+  <title>New Line</title>
+  <meta http-equiv="Content-type" content="text/html; charset=utf-8">
+
+  <script src="intelxdk.js"></script>
+  <script type="text/javascript">
+    /* This function runs once the page is loaded, but appMobi is not yet active */
+    var init = function(){
+    
+    };
+    window.addEventListener("load",init,false);  
+    
+    /* This code prevents users from dragging the page */
+    var preventDefaultScroll = function(event) {
+        event.preventDefault();
+        window.scroll(0,0);
+        return false;
+    };
+    document.addEventListener('touchmove', preventDefaultScroll, false);
+    
+    /* This code is used to run as soon as appMobi activates */
+    var onDeviceReady=function(){
+    	
+    	//hide splash screen
+    	AppMobi.device.hideSplashScreen();	
+    };
+    document.addEventListener("appMobi.device.ready",onDeviceReady,false);
+  </script>
+
+  <script type="application/javascript" src="js/jquery.min.js"></script>
+  <script type="application/javascript" src="bootstrap/js/bootstrap.min.js"></script>
+    <script src="//da189i1jfloii.cloudfront.net/js/kinvey-html5-1.1.0.min.js"></script>
+    
+    
+   <!-- css -->
+   <link rel="stylesheet" type="text/css" href="css/app.css" />
+  <!-- library scripts -->
+  <script src="lib/underscore.min.js"></script>  
+  <script src="lib/ping.js"></script> 
+
+  <!-- app scripts -->
+  <script src="js/utils.js"></script>
+  <script src="js/error.js"></script>
+  <script src="js/app.js"></script>
+  <script src="js/record.js"></script>
+
+  <script>
+   // $(document).ready(app.init);
+  </script>
+    <script>
+      // Initialize Kinvey for use in your app.
+        $(document).ready(function()
+        {
+            var promise = Kinvey.init({ appKey    : 'kid_TeUDD-CFVi', appSecret : 'f67140aa4b534749b28be7928d2e19ae' });
+            promise.then(app.init);
+        });
+    </script>
+
+</head>
+
+<body>
+
+  <!-- content goes here-->
+  <div class="uwrap">
+    <div class="upage">
+      <div class="upage-outer">
+        <div class="upage-content">
+
+          <div class="grid grid-pad urow uib_row_1 row-height-1" data-uib="layout/row">
+            <div class="col uib_col_1 col-0_8-12" data-uib="layout/col">
+              <div class="widget-container content-area vertical-col">
+
+                <span class="widget uib_w_8 d-margins label label-danger hide" data-uib="twitter%20bootstrap/badge_and_label" id="bad-things">Bad Things Have Happened</span>
+                <div id="current-list" class="list-group widget uib_w_3 d-margins" data-uib="twitter%20bootstrap/list_group">
+                  
+                    <!--
+                  <a class="list-group-item allow-badge widget uib_w_4" data-uib="twitter bootstrap/list_item">
+                      <span class="delete-item badge glyphicon glyphicon-trash"></span>
+                      <span class="edit-item   badge glyphicon glyphicon-pencil hide"></span>
+                      <p class="list-group-item-text">List item</p>   
+                  </a>
+                     -->
+                  
+                </div>
+                <button id="amend" type="button" class="btn widget uib_w_18 d-margins limitw btn-sm btn-primary" data-uib="twitter%20bootstrap/button"><i class="glyphicon glyphicon-pencil button-icon-left" data-position="left"></i>amend</button>
+                <span class="uib_shim"></span>
+              </div>
+            </div>
+            <div class="col uib_col_2 col-0_4-12" data-uib="layout/col">
+              <div class="widget-container content-area vertical-col">
+
+                <button id="start"    type="button" class="btn widget uib_w_7 d-margins btn-primary" data-uib="twitter%20bootstrap/button"><i class="glyphicon glyphicon-headphones button-icon-left" data-position="left"></i>New List</button>
+                <button id="stop"     type="button" class="btn widget uib_w_8 d-margins btn-warning hide" data-uib="twitter%20bootstrap/button"><i class="glyphicon button-icon-left" data-position="left"></i>Stop</button>
+
+                <button id="linefeed" type="button" class="btn widget uib_w_2 d-margins btn-lg btn-success disabled" data-uib="twitter%20bootstrap/button">Line Feed<i class="glyphicon glyphicon-heart button-icon-bottom" data-position="bottom"></i>
+                </button>
+
+                <span class="uib_shim"></span>
+              </div>
+            </div>
+            <span class="uib_shim"></span>
+          </div>
+
+          <div class="grid grid-pad urow uib_row_2 row-height-2" data-uib="layout/row">
+            <div class="col uib_col_3 col-0_12-12" data-uib="layout/col">
+              <div class="widget-container content-area vertical-col">
+                <span class="widget uib_w_13 d-margins label label-info" data-uib="twitter%20bootstrap/badge_and_label">My Lists</span>
+                <div id="list-record" class="list-group widget uib_w_14 d-margins" data-uib="twitter%20bootstrap/list_group">
+                  <!--<a class="list-group-item allow-badge widget uib_w_15" data-uib="twitter bootstrap/list_item"><span class="badge glyphicon glyphicon-trash"></span><h4 class="list-group-item-heading">Heading</h4><p class="list-group-item-text">List item</p></a> -->
+                  
+                </div>
+                <span class="uib_shim"></span>
+                <a id="ping">ping</a>
+              </div>
+            </div>
+            <span class="uib_shim"></span>
+          </div>
+        </div>
+        <!-- /upage-content -->
+          
+
+      </div>
+      <!-- /upage-outer -->
+
+    </div>
+    <!-- /upage -->
+
+  </div>
+  <!-- /uwrap -->
+</body>
+
+</html>

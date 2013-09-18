@@ -1,0 +1,23 @@
+@gutter_r1: 20px;
+
+.uib_row_1:not(.cright) > .col { padding-right:@gutter_r1; }
+
+.uib_row_1.cright > .col { padding-left:@gutter_r1; }
+
+@media all and (min-width: @wp_1) {
+  .uib_col_1     { width:67%;}
+  .urow.cright       > .uib_col_1     { padding-left: 0px !important;}
+  .urow:not(.cright) > .uib_col_1     { clear:left;  }
+  .uib_col_2     { width:33%;}
+  .urow:not(.cright) > .uib_col_2     { padding-right:0px !important;}
+  .urow.cright       > .uib_col_2     { clear:right; }
+}
+
+@media all and (max-width: @wp_1) {
+  .col-0_8-12     { width: auto; float: none !important;  clear:both;}
+  .urow:not(.cright) > .col-0_8-12 { padding-right: 0px !important; }
+  .urow.cright > .col-0_8-12       { padding-left:  0px !important; }
+  .col-0_4-12     { width: auto; float: none !important;  clear:both;}
+  .urow:not(.cright) > .col-0_4-12 { padding-right: 0px !important; }
+  .urow.cright > .col-0_4-12       { padding-left:  0px !important; }
+}

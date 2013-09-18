@@ -1,0 +1,3 @@
+.edit-item:hover     { background-color:lightgreen; }
+.edit-item.recording { background-color:red; }
+.delete-item:hover   { background-color:lightgreen; }
